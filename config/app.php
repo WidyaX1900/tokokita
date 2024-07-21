@@ -54,6 +54,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
     'asset_url' => env('ASSET_URL', 'http://localhost/tokokita/resources'),
+    'storage_url' => env('STORAGE_URL', 'http://localhost/tokokita/public/storage'),
 
     /*
     |--------------------------------------------------------------------------
