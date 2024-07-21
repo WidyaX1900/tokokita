@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
+            $table->uuid()->index();
             $table->string("name", 255);
             $table->string("email", 500);
             $table->integer("rating");
-            $table->unsignedBigInteger("user_id")->index();
+            $table->char("user_id", 36)->index();
             $table->timestamps();
         });
     }
