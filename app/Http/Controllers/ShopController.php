@@ -29,7 +29,31 @@ class ShopController extends Controller
      */
     public function store(StoreShopRequest $request)
     {
-        //
+        $file = $request->file('photo');
+        $filename = '';
+        $uuid = rand();
+
+        if ($file !== null) {
+            $filename = time();
+            $filename .= '.';
+            $filename .= $file->extension();
+
+            $file->storeAs('logos', $filename);
+            $insert = Shop::create([
+                'uuid' => $uuid,
+                'name' => $request->name,
+                'email' => $request->email,
+                'photo' => $filename,
+                'rating' => 0,
+                'user_id' => $request->user_id
+            ]);
+
+            if ($insert) {
+                dd('Success adding shop');
+            } else {
+                dd("Failed to add shop");
+            }
+        }
     }
 
     /**

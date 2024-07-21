@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Shop extends Model
 {
     use HasFactory;
+    protected $connection = 'mysql';
+    protected $fillable = [
+        'uuid',
+        'name',
+        'email',
+        'rating',
+        'photo',
+        'user_id',
+    ];
 }

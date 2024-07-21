@@ -11,7 +11,7 @@ class StoreShopRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,21 @@ class StoreShopRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:shops|',
+            'email' => 'required|unique:shops|email:rfc,dns',
+            'photo' => 'required'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'The shop name cannot be empty!',
+            'name.unique' => 'The shop name has already been taken!',
+            'email.required' => 'The shop email cannot be empty!',
+            'email.unique' => 'The shop email has been registered!',
+            'email.email' => 'Wrong email format!',
+            'photo.required' => 'You must upload your shop\'s logo!'
         ];
     }
 }

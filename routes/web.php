@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 // Shop routes
 Route::get('/shop/create', [ShopController::class, 'create']);
+Route::post('/shop/store', [ShopController::class, 'store']);
