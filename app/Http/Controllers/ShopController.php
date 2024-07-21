@@ -13,7 +13,12 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $user = '9879087';
+        $shops = Shop::where('user_id', $user)->orderBy('id', 'desc')->get();
+
+        return view('shop.index', [
+            'shops' => $shops
+        ]);
     }
 
     /**

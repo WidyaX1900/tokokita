@@ -1,7 +1,8 @@
 @extends('layout.layout')
 @section('content')
     <div class="container mt-5">
-        <h3>Create Store</h3>
+        <a href="/shop">Back</a>
+        <h3 class="mt-2">Create Store</h3>
         <form action="/shop/store" method="post" class="col-6" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" id="userId" value="9879087">

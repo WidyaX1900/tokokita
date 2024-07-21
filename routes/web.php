@@ -9,5 +9,6 @@ Route::get('/', function () {
 });
 
 // Shop routes
+Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/shop/create', [ShopController::class, 'create']);
 Route::post('/shop/store', [ShopController::class, 'store']);
