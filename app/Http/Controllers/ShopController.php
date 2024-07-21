@@ -16,6 +16,8 @@ class ShopController extends Controller
         $user = '9879087';
         $shops = Shop::where('user_id', $user)->orderBy('id', 'desc')->get();
 
+        if (count($shops) <= 0) return redirect('/');
+
         return view('shop.index', [
             'shops' => $shops
         ]);
@@ -54,7 +56,11 @@ class ShopController extends Controller
             ]);
 
             if ($insert) {
-                dd('Success adding shop');
+                $request->session()->flash('message', [
+                    'color' => 'success',
+                    'content' => 'New store added successfully'
+                ]);
+                return redirect('/shop');
             } else {
                 dd("Failed to add shop");
             }

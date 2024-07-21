@@ -1,6 +1,13 @@
 @extends('layout.layout')
 @section('content')
     <div class="container mt-5">
+        @if (session('message'))
+            <div class="alert alert-{{ session('message')['color'] }} alert-dismissible fade show col-8 mx-auto"
+                role="alert">
+                {{ session('message')['content'] }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <h1>My Shops</h1>
         <div class="text-end mb-3">
             <a href="/shop/create" class="btn btn-primary">
