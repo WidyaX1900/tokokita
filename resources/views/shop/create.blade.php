@@ -10,7 +10,7 @@
                 <input type="text" class="form-control" id="name" placeholder="Enter shop name..." name="name">
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Shop email</label>
+                <label for="email" class="form-label">Shop Email</label>
                 <input type="text" class="form-control" id="email" placeholder="Enter shop email..." name="email">
             </div>
             <div class="mb-3">
