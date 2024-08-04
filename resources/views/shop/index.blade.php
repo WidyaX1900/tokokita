@@ -31,7 +31,7 @@
                     </td>
                     <td>{{ $shop->name }}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-success me-2">
+                        <a href="/shop/show/{{ $shop->uuid }}" class="btn btn-sm btn-success me-2">
                             Detail
                         </a>
                         <a href="#" class="btn btn-sm btn-warning me-2">

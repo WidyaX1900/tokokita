@@ -12,3 +12,4 @@ Route::get('/', function () {
 Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/shop/create', [ShopController::class, 'create']);
 Route::post('/shop/store', [ShopController::class, 'store']);
+Route::get('/shop/show/{id}', [ShopController::class, 'show']);

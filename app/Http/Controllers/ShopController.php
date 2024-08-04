@@ -61,8 +61,6 @@ class ShopController extends Controller
                     'content' => 'New store added successfully'
                 ]);
                 return redirect('/shop');
-            } else {
-                dd("Failed to add shop");
             }
         }
     }
@@ -70,9 +68,14 @@ class ShopController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Shop $shop)
+    public function show(Shop $shop, $id)
     {
-        //
+        $shop = $shop->where('uuid', $id)->get();
+        
+        if(count($shop) <= 0) return redirect('/shop');
+        return view('shop.show', [
+            'shop' => $shop[0]
+        ]);        
     }
 
     /**
