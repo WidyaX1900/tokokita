@@ -72,7 +72,7 @@ class ShopController extends Controller
     {
         $shop = $shop->where('uuid', $id)->get();
         
-        if(count($shop) <= 0) return redirect('/shop');
+        if (count($shop) <= 0) return redirect('/shop');
         return view('shop.show', [
             'shop' => $shop[0]
         ]);        
@@ -81,9 +81,14 @@ class ShopController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Shop $shop)
+    public function edit(Shop $shop, $id)
     {
-        //
+        $shop = $shop->where('uuid', $id)->get();
+
+        if (count($shop) <= 0) return redirect('/shop');
+        return view('shop.edit', [
+            'shop' => $shop[0]
+        ]);
     }
 
     /**

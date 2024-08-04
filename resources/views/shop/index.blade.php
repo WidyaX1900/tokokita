@@ -34,7 +34,7 @@
                         <a href="/shop/show/{{ $shop->uuid }}" class="btn btn-sm btn-success me-2">
                             Detail
                         </a>
-                        <a href="#" class="btn btn-sm btn-warning me-2">
+                        <a href="/shop/edit/{{ $shop->uuid }}" class="btn btn-sm btn-warning me-2">
                             Edit
                         </a>
                         <a href="#" class="btn btn-sm btn-danger">
